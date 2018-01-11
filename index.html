@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Game</title>
+<link href=style.css rel="stylesheet">
 </head>
-<body>
+<body onkeydown="keyListener(event)">
+<input type="button" onclick="toTheLeftWithFilledTable()" value="Влево"/>
+<input type="button" onclick="toTheRightWithFilledTable()" value="Вправо"/>
+<input type="button" onclick="toTheUpWithFilledTable()" value="Вверх"/>
+<input type="button" onclick="toTheDownWithFilledTable()" value="Вниз"/>
 
 </body>
 <script src="game.js"></script>
+<script>
+    function keyListener(event){
+        //debugger;
+        event = event || window.event; //capture the event, and ensure we have an event
+        var key = event.key || event.which || event.keyCode; //find the key that was pressed
+        if(event.which===37){
+            toTheLeftWithFilledTable();
+        }
+        else if(event.which===38){
+            toTheUpWithFilledTable();
+        }
+        else if(event.which===39){
+            toTheRightWithFilledTable();
+        }
+        else if(event.which===40){
+            toTheDownWithFilledTable();
+        }
+    }
+</script>
 </html>
