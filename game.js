@@ -1,6 +1,4 @@
-/**
- * Created by agold on 21/09/2017.
- */
+
 n = prompt("Введите размерность поля", 0);
 
 function matrix(n) {
